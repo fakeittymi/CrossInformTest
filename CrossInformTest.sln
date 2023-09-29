@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripleter", "Tripleter\Tripleter.csproj", "{E2313F57-1B6D-4ECE-AF2A-8DB17699D491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleterDemo", "TripleterDemo\TripleterDemo.csproj", "{9A27E9D1-8A58-4F3A-99E7-917542283161}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2313F57-1B6D-4ECE-AF2A-8DB17699D491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2313F57-1B6D-4ECE-AF2A-8DB17699D491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2313F57-1B6D-4ECE-AF2A-8DB17699D491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2313F57-1B6D-4ECE-AF2A-8DB17699D491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A27E9D1-8A58-4F3A-99E7-917542283161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A27E9D1-8A58-4F3A-99E7-917542283161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A27E9D1-8A58-4F3A-99E7-917542283161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A27E9D1-8A58-4F3A-99E7-917542283161}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {381BE285-2A3C-447C-AD7F-1B727A242F8F}
+	EndGlobalSection
+EndGlobal
