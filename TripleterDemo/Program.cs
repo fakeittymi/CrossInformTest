@@ -9,13 +9,18 @@ namespace CrossinformTest.Chimpoesh.TripleterDemo
     public class Program
     {
         /// <summary>
-        /// Путь к файлу.
+        /// Путь к файлу маленького размера.
         /// </summary>
-        private static readonly string filePath = "C:\\Users\\sserk\\OneDrive\\Desktop\\текст.txt";
+        private static readonly string filePath = "D:\\текст1.txt";
+
+        /// <summary>
+        /// Путь к файлу большого размера.
+        /// </summary>
+        private static readonly string largeTextFilePath = "D:\\текст.txt";
 
         static void Main(string[] args)
         {
-            RunDemo();
+            RunDemoV2();
         }
 
         /// <summary>
@@ -68,6 +73,40 @@ namespace CrossinformTest.Chimpoesh.TripleterDemo
             {
                 Console.WriteLine($"{triplet.Key} - {triplet.Value}");
             }
+        }
+
+        /// <summary>
+        /// Запускает демонстрацию обработки большого файла.
+        /// </summary>
+        private static void RunDemoV2()
+        {
+            if (!File.Exists(largeTextFilePath))
+            {
+                throw new FileNotFoundException(largeTextFilePath);
+            }
+
+            var stopwatch = new Stopwatch();
+            var tripleter = new TripletSearcher();
+
+            stopwatch.Start();
+            var triplets = tripleter
+                .GetTripletsFrequencyParallelForV2(largeTextFilePath)
+                .OrderByDescending(v => v.Value)
+                .Take(10);
+            var count = triplets.Count();
+            stopwatch.Stop();
+            Console.WriteLine("Параллельная обработка большого файла");
+            Console.WriteLine($"Время выполнения: {stopwatch.ElapsedMilliseconds} мс\n");
+
+            stopwatch.Restart();
+            triplets = tripleter
+                .GetTripletsFrequencyParallelForV2(filePath)
+                .OrderByDescending(v => v.Value)
+                .Take(10);
+            count = triplets.Count();
+            stopwatch.Stop();
+            Console.WriteLine("Обработка файла из прошлых тестов методом Parallel");
+            Console.WriteLine($"Время выполнения: {stopwatch.ElapsedMilliseconds}  мс\n");
         }
     }
 }
